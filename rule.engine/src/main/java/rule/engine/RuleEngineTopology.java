@@ -19,7 +19,6 @@ public class RuleEngineTopology {
 		// Zookeeper that serves for Kafka queue
 		ZkHosts zk = new ZkHosts(
 				"ec2-54-183-118-187.us-west-1.compute.amazonaws.com");
-
 		SpoutConfig configTicks = new SpoutConfig(zk, "forex",
 				"/kafkastormforex2", "kafkastormforex2");
 		configTicks.scheme = new SchemeAsMultiScheme(new TickScheme());
