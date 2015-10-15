@@ -23,10 +23,14 @@ schema = {
 }
 
 # connect to kafka
+#class kafka.client.KafkaClient(hosts, client_id='kafka-python', timeout=120, correlation_id=0)
+#variable kafka is an instance of class kafka.client.KafkaClient
 kafka = KafkaClient("ec2-54-183-118-187.us-west-1.compute.amazonaws.com:9092")
+#class kafka.producer.SimpleProducer(*args, **kwargs)
 producer = SimpleProducer(kafka)
 
 # connect to database
+#cql is Cassandra Query Language driver
 con = cql.connect('ec2-54-187-166-118.us-west-2.compute.amazonaws.com',
 		'9160', 'janusz_forex_rt_demo', cql_version='3.1.1')
 cursor = con.cursor()
